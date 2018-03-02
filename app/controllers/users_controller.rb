@@ -8,7 +8,8 @@ class UsersController < ApplicationController
     @user = User.new(
       name: params[:user][:name],
       password: params[:user][:password],
-      password_confirmation: params[:user][:password_confirmation]
+      password_confirmation: params[:user][:password_confirmation],
+      role: params[:user][:role]
     )
 
     if @user.save

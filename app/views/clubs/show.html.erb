@@ -2,5 +2,7 @@
 
 <p>You are authorized for entry! Welcome.</p>
 
-<p><%= link_to "Edit", edit_club_path(@club) %></p>
+<% if @club.user == current_user %>
+  <p><%= link_to "Edit", edit_club_path(@club) %></p>
+<% end %>
 <p><%= link_to "Back to all clubs", clubs_path %></p>
